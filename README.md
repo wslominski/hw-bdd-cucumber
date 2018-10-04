@@ -23,11 +23,19 @@ local repo, you need to say `git push origin --tags` to push the tags to
 a remote.  (Tags are ignored by deployment remotes such as Heroku, so
 there's no point in pushing tags there.) 
 
-Once you clone the repo, change directories twice to get to the app root. `cd hw-bdd-cucumber` will get you into the homework directory, and `cd rottenpotatoes` will get you into the app root. From there, run `bundle install --without production` to ensure your gemfiles are ready to go.
+Once you clone the repo, these commands should get you up and running:
+
+```
+$ cd hw-bdd-cucumber/rottenpotatoes
+$ bundle install --without production
+$ rake db:migrate
+$ rake db:seed
+$ rake db:test:prepare
+```
 
 Also, make sure Cucumber is working by running the `cucumber` command. You can also run individual features by specifying a filename with the cucumber command, such as `cucumber features/sort_movie_list.feature`.
 
-You will likely see deprecation warnings, which are shown below. While ugly, you can ignore these for the assignment. They just mean that the step definitions are using an old method called .should, and need to be updated to use .expect eventually.
+You may see deprecation warnings, which are shown below. While ugly, you can ignore these for the assignment. They just mean that the step definitions are using an old method called .should, and need to be updated to use .expect eventually.
 
 ```
 DEPRECATION: Using `should` from rspec-expectations' old `:should` 
