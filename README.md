@@ -12,16 +12,8 @@ The app code in `hw-bdd-cucumber/rottenpotatoes` contains a "canonical" solution
 Rails Intro homework against which to write your scenarios, and the
 necessary scaffolding for the first couple of scenarios. 
 
-Fork this repo into your own GitHub account and clone it into Cloud9 using the clone link from your fork with the `git clone` command in Cloud 9. We recommend
-that you do a `git commit` as you get each part working.  As an optional
-additional help, git allows you to associate tags---symbolic
-names---with particular commits.  For example, immediately after doing a
-commit, you could say `git tag hw3-part1b` , and thereafter you could
-use `git diff hw3-part1b` to see differences since that commit, rather
-than remembering its commit ID.  Note that after creating a tag in your
-local repo, you need to say `git push origin --tags` to push the tags to
-a remote.  (Tags are ignored by deployment remotes such as Heroku, so
-there's no point in pushing tags there.) 
+You may fork your own copy, or just clone this repo directly. If you clone it directly, you won't be able to push your code changes back from your IDE. Maybe that's OK with you. If you fork into your own GitHub account first and clone your fork, you can push your changes back to your github account. We recommend
+that you do a `git commit` as you get each part working. 
 
 Once you clone the repo, these commands should get you up and running:
 
