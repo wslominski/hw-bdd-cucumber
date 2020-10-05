@@ -20,12 +20,12 @@ Once you clone the repo, these commands should get you up and running:
 ```
 $ cd hw-bdd-cucumber/rottenpotatoes
 $ bundle install --without production
-$ rake db:migrate
-$ rake db:seed
-$ rake db:test:prepare
+$ bundle exec rake db:migrate
+$ bundle exec rake db:seed
+$ bundle exec rake db:test:prepare
 ```
 
-Also, make sure Cucumber is working by running the `cucumber` command. You can also run individual features by specifying a filename with the cucumber command, such as `cucumber features/sort_movie_list.feature`.
+Also, make sure Cucumber is working by running the `bundle exec cucumber` command. You can also run individual features by specifying a filename with the cucumber command, such as `bundle excec cucumber features/sort_movie_list.feature`.
 
 You may see deprecation warnings, which are shown below. While ugly, you can ignore these for the assignment. They just mean that the step definitions are using an old method called .should, and need to be updated to use .expect eventually.
 
