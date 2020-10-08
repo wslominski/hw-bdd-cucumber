@@ -90,8 +90,18 @@ When /^(?:|I )check "([^"]*)"$/ do |field|
   check(field)
 end
 
+When /^(?:|I ) check the following ratings: (.*)$/ do |check, ratings_list|
+  rating = ratings_list.split(" ")
+  check(rating)
+end
+
 When /^(?:|I )uncheck "([^"]*)"$/ do |field|
   uncheck(field)
+end
+
+When /^(?:|I ) uncheck the following ratings: ([^"]*)$/ do |ratings_list|
+  rating = ratings_list.split(" ")
+  uncheck(rating)
 end
 
 When /^(?:|I )choose "([^"]*)"$/ do |field|

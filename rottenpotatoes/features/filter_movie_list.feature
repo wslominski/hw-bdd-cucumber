@@ -24,10 +24,33 @@ Background: movies have been added to database
 
 Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to check the 'PG' and 'R' checkboxes
+  Given I check the following ratings: ratings_PG ratings_R
+  And I check "ratings_PG"
+  And I check "ratings_R"
   # enter step(s) to uncheck all other checkboxes
+  And I uncheck the following ratings: ratings_G ratings_PG-13 ratings_NC-17
+  And I uncheck "ratings_G"
+  And I uncheck "ratings_PG-13"
+  And I uncheck "ratings_NC-17"
   # enter step to "submit" the search form on the homepage
+  And I press "Refresh"
   # enter step(s) to ensure that PG and R movies are visible
+  Then I should see "Terminator"
+  And I should see "Harry Met"
   # enter step(s) to ensure that other movies are not visible
+  And I should not see "Space"
+  And I should not see "Chicken"
+  And I should not see "Chocolat"
 
 Scenario: all ratings selected
   # see assignment
+  
+Scenario: be able to filter
+    #press the title tab
+    Given I follow "title_header"
+    Then I should see "Chicken" before "Chocolat"
+    But I should not see "Raiders" before "Amelie"
+    #filter by release date
+    Given I follow "release_date_header"
+    Then I should see "Aladdin" before "Amelie"
+    But I should not see "Incredibles" before "Terminator"
